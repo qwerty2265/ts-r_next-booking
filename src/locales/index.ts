@@ -1,0 +1,1 @@
+export { ruTranslation } from "./ru"
