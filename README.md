@@ -1,9 +1,7 @@
 # ts-r_next-booking
 
 ## Nodejs
-```
 [NodeJs v20.17.0](https://nodejs.org/en/download)
-```
 
 ## .env
 ```
@@ -15,7 +13,7 @@ NEXTAUTH_URL="http://localhost:3000"
 NEXTAUTH_SECRET=your-secret-key-here
 ```
 
-## Dependencies
+## dependencies
 ```
 npm install
 ```
@@ -26,7 +24,7 @@ npx prisma generate
 npx prisma db push
 ```
 
-## Dev
+## dev
 ```
 npx next dev --turbopack
 ```
