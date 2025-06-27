@@ -55,7 +55,7 @@ export default function RegisterForm() {
   return (
     <Paper elevation={10} className="w-96 p-4">
       <Typography component="h1" variant="h5" className="text-center">
-        Sign Up
+        Регистрация
       </Typography>
       
       {error && (
@@ -66,7 +66,7 @@ export default function RegisterForm() {
 
       <Box component="form" onSubmit={handleSubmit} noValidate className="mt-2">
         <TextField
-          placeholder="Enter your name"
+          placeholder="Имя"
           fullWidth
           required
           value={name}
@@ -75,7 +75,7 @@ export default function RegisterForm() {
           disabled={loading}
         />
         <TextField
-          placeholder="Enter email"
+          placeholder="Почта"
           fullWidth
           required
           type="email"
@@ -85,7 +85,7 @@ export default function RegisterForm() {
           disabled={loading}
         />
         <TextField
-          placeholder="Enter password"
+          placeholder="Пароль"
           fullWidth
           required
           type="password"
@@ -102,14 +102,14 @@ export default function RegisterForm() {
           className="mt-2"
           disabled={loading}
         >
-          {loading ? "Creating account..." : "Sign Up"}
+          {loading ? "Загрузка..." : "Зарегистрироваться"}
         </Button>
       </Box>
       
       <Grid container justifyContent="center" className="mt-4">
         <Grid>
-          <Link href="/auth/login">
-            Already have an account? Sign In
+          <Link href="/auth/login" className="text-blue-800 hover:underline">
+            Уже есть аккаунт? Войти
           </Link>
         </Grid>
       </Grid>
