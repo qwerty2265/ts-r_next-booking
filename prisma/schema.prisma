@@ -27,13 +27,13 @@ model User {
 model Booking {
   id        String   @id @default(cuid())
   title     String
+  subtitle  String
   start     DateTime
   end       DateTime
   userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  // Связь с пользователем
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("bookings")

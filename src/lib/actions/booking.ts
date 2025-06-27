@@ -4,7 +4,7 @@ import { db } from '@/lib/db';
 import { getCurrentUser } from './auth';
 import { revalidatePath } from 'next/cache';
 
-export async function createBooking(title: string, start: Date, end: Date) {
+export async function createBooking(title: string, subtitle: string, start: Date, end: Date) {
   try {
     const user = await getCurrentUser();
     
@@ -15,6 +15,7 @@ export async function createBooking(title: string, start: Date, end: Date) {
     const booking = await db.booking.create({
       data: {
         title,
+        subtitle,
         start,
         end,
         userId: user.id,
@@ -51,7 +52,6 @@ export async function deleteBooking(id: string) {
       throw new Error('Unauthorized');
     }
 
-    // Проверяем, что пользователь может удалить это бронирование
     const booking = await db.booking.findFirst({
       where: { 
         id,
